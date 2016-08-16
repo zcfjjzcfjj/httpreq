@@ -1,3 +1,4 @@
+package cn.com.a5.console.lb;
 import java.util.List;
 import java.util.Map;
 

@@ -19,6 +19,7 @@ import javax.swing.text.AbstractDocument.Content;
 
 import org.omg.PortableInterceptor.ServerIdHelper;
 
+import cn.com.a5.console.lb.HttpReqResponse;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 

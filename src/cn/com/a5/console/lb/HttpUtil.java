@@ -1,3 +1,4 @@
+package cn.com.a5.console.lb;
 import org.apache.commons.io.IOUtils; 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
@@ -82,12 +83,17 @@ public class HttpUtil {
 
     
     /**
-     * 发送 a5console专属的的GET 请求（HTTP）;已经设定super_auth权限;
+     * 发送 a5console专属的的GET 请求（HTTP）;
+     * NOTE:与普通get请求比较：<br>
+     * 已经设定super_auth权限;<br>
      * @param url
      * @return
      */
     public static HttpReqResponse a5Get(String url,Map<String, Object> params) {
-    	params.put("super_auth", "1"); 					// 添加super_auth权限
+    	String key =  URLLoadbalance.authstr.split("=")[0];
+    	String value =  URLLoadbalance.authstr.split("=")[1];
+    	params.put(key,value); 					// 添加super_auth权限
+//    	params.put("super_auth", "1"); 			// 添加super_auth权限
         return doGet(url, params);
     }
     
@@ -271,13 +277,18 @@ public class HttpUtil {
     
     /**
      * 发送 POST 请求（HTTP），JSON形式<br>
-     * NOTE: 与普通的post请求相比，加入了URL编码,空格替换为~(防止空格编码为+),实际post的json串为"content=jsonstr(URL编码)"
+     * NOTE: 与普通的post请求相比<br>
+     * 加入super_auth=1<br>
+     * 加入URL编码,<br>
+     * 空格替换为~(防止空格编码为+),实际post的json串为"content=jsonstr(URL编码)"<br>
      * @param apiUrl
      * @param json json对象(object.tostring为json字符串)
      * @return
      */
     
     public static HttpReqResponse a5Post(String apiUrl, Object json) {
+//    	apiUrl = apiUrl + "?" + "super_auth=1";   // 加入权限
+    	apiUrl = apiUrl + "?" + URLLoadbalance.authstr;   // 加入权限
     	HttpReqResponse  rlt = new HttpReqResponse();
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String httpStr = null;
@@ -493,33 +504,32 @@ public class HttpUtil {
     	Object json; 										 // POST json对象;要求 tostring函数可以输出所有的json字符串
     	HttpReqResponse res;								 // res http请求响应
     	
-//    	System.out.println("-----测试：1 a5get----------------------------");
-//    	url = "http://10.9.1.5:8080/manage/services/list";
-//    	params  =  new HashMap();        // url 参数 map: key:value
-//    	res = HttpUtil.a5Get(url,params);
-//    	HttpUtil.printHttpRes(res);
-    	
-    	
-    	System.out.println("-----测试：2 a5post----------------------------");
-    	url ="http://10.9.1.5:8080111/manage/services/update?super_auth=1";
-    	json = "{\"records\":"
-	    			+ "["
-		    			+ "{"
-		    			+ "\"type\":\"add\","
-		    			+ "\"server_info\":"
-			    			+ "{"
-			    			+ "\"address\":\"127.0.0.1:8080\","
-			    			+ "\"name\":\"service1\","
-			    			+ "\"description\":\"service-1\","
-			    			+ "\"weight\":1"
-			    			+ "}"
-			    		+ "}"
-		    		+ "]"
-    			+ "}";
-    	
-    	res = HttpUtil.a5Post(url, json);
+    	System.out.println("-----测试：1 a5get----------------------------");
+    	url = "http://10.9.1.5:8080/manage/services/list";
+    	params  =  new HashMap();        // url 参数 map: key:value
+    	res = HttpUtil.a5Get(url,params);
     	HttpUtil.printHttpRes(res);
-
-    	System.exit(0);
+    	
+    	
+//    	System.out.println("-----测试：2 a5post----------------------------");
+//    	url ="http://10.9.1.5:8080/manage/services/update";
+//    	json = "{\"records\":"
+//	    			+ "["
+//		    			+ "{"
+//		    			+ "\"type\":\"add\","
+//		    			+ "\"server_info\":"
+//			    			+ "{"
+//			    			+ "\"address\":\"127.0.0.1:8080\","
+//			    			+ "\"name\":\"service1\","
+//			    			+ "\"description\":\"service-1\","
+//			    			+ "\"weight\":1"
+//			    			+ "}"
+//			    		+ "}"
+//		    		+ "]"
+//    			+ "}";
+//    	
+//    	res = HttpUtil.a5Post(url, json);
+//    	HttpUtil.printHttpRes(res);
+//
     }
 }
