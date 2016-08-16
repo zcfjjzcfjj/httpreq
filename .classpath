@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/commons-cli-1.3.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/commons-cli-1.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/json_anlysis/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.5/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/fluent-hc-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/httpclient-cache-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/httpclient-win-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/httpcomponents-client-4.5/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4-sources.jar"/>
+	<classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
