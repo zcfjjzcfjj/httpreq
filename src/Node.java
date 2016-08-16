@@ -1,4 +1,4 @@
-import java.awt.List;
+
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
@@ -6,10 +6,6 @@ import com.google.gson.Gson;
  * 
  * @author zc
  * 参考：
- * (选)http://blog.csdn.net/tkwxty/article/details/34474501/
- *(选) http://jingyan.baidu.com/article/17bd8e521f1cf385ab2bb819.html
- * http://jingyan.baidu.com/article/e8cdb32b619f8437042bad53.html
- * http://blog.sina.com.cn/s/blog_64e467d60101ibpd.html
  *
  */
 

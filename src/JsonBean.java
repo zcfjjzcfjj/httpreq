@@ -6,7 +6,11 @@ import com.google.gson.reflect.TypeToken;
 /**
  * 利用Gson解析json字符串
  * 参考 : http://blog.csdn.net/tkwxty/article/details/34474501/
- * 方式1:  (构建json对象解析)根据json串定义jsonbean对象，必须key严格对应，在解析的时候，直接调用元素即可
+ * (选)http://blog.csdn.net/tkwxty/article/details/34474501/
+ *(选) http://jingyan.baidu.com/article/17bd8e521f1cf385ab2bb819.html
+ * http://jingyan.baidu.com/article/e8cdb32b619f8437042bad53.html
+ * http://blog.sina.com.cn/s/blog_64e467d60101ibpd.html
+ * 方式1:  (通过json字符串构建gson对象解析)根据json串定义jsonbean对象，必须key严格对应，在解析的时候，直接调用元素即可
  * @author zc
  *
  */
